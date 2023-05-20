@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, SafeAreaView } from "react-native";
 import { useFonts } from "expo-font";
-import Heading from "./components/Heading";
-import Darcel from "./components/Darcel";
+import Home from "./components/Home";
 import InfoIcon from "./components/InfoIcon";
 import { styleVars } from "./utils/styles";
 import { shake } from "./utils/shake";
@@ -29,8 +28,7 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Heading text={["Ask me a", "question", "then shake!"]} />
-      <Darcel isShaking={isShaking} />
+      <Home isShaking={isShaking} />
       <InfoIcon />
       <StatusBar style="auto" />
     </SafeAreaView>

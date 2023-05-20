@@ -3,7 +3,7 @@ import { StyleSheet, View, Image } from "react-native";
 import DarcelEye from "./DarcelEye";
 import { stylesDarcel } from "../utils/styles";
 
-export default function Darcel(props: { isShaking: boolean }) {
+export default function HomeDarcel(props: { isShaking: boolean }) {
   const mouths = ["frown", "smile", "flat"];
   const eyelids = ["none", "large", "small", "med"];
 
