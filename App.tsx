@@ -9,7 +9,7 @@ import { shake } from "./utils/shake";
 
 export default function App() {
   const shaking = shake();
-  const [isShaking, setIsShaking] = useState<boolean>(false);
+  const [isShaking, setIsShaking] = useState(false);
 
   const [fontsLoaded] = useFonts({
     "Avant-Garde": require("./assets/fonts/itc-avant-garde-gothic-lt-bold.ttf"),
@@ -18,6 +18,10 @@ export default function App() {
   useEffect(() => {
     if (shaking && !isShaking) {
       setIsShaking(true);
+
+      setTimeout(() => {
+        setIsShaking(false); // Will remove
+      }, 5000);
     }
   }, [shaking]);
 

@@ -7,11 +7,11 @@ export default function HomeDarcel(props: { isShaking: boolean }) {
   const mouths = ["frown", "smile", "flat"];
   const eyelids = ["none", "large", "small", "med"];
 
-  const [darcelMouth, setDarcelMouth] = useState<string>(
+  const [darcelMouth, setDarcelMouth] = useState(
     mouths[Math.floor(Math.random() * 3)]
   );
 
-  const [darcelEyelid, setDarcelEyelid] = useState<string>(
+  const [darcelEyelid, setDarcelEyelid] = useState(
     eyelids[Math.floor(Math.random() * 3)]
   );
 
@@ -32,31 +32,39 @@ export default function HomeDarcel(props: { isShaking: boolean }) {
 
   // Mouth
   useEffect(() => {
-    const interval = setInterval(() => {
-      // 1/3 change of changing
-      if (!Math.floor(Math.random() * 3)) {
-        setDarcelMouth(mouths[Math.floor(Math.random() * 3)]);
-      }
-    }, 2000); // Changes every 2 secs
+    if (props.isShaking) {
+      setDarcelMouth("frown");
+    } else {
+      const interval = setInterval(() => {
+        // 1/3 change of changing
+        if (!Math.floor(Math.random() * 3)) {
+          setDarcelMouth(mouths[Math.floor(Math.random() * 3)]);
+        }
+      }, 2000); // Changes every 2 secs
 
-    return () => clearInterval(interval);
-  }, []);
+      return () => clearInterval(interval);
+    }
+  }, [props.isShaking]);
 
   // Eyelid
   useEffect(() => {
-    const interval = setInterval(() => {
-      // 1/4 change of changing
-      if (!Math.floor(Math.random() * 4)) {
-        setDarcelEyelid("closed"); // Blink
+    if (props.isShaking) {
+      setDarcelEyelid("none");
+    } else {
+      const interval = setInterval(() => {
+        // 1/3 change of closing
+        if (!Math.floor(Math.random() * 3)) {
+          setDarcelEyelid("closed"); // Blink
 
-        setTimeout(() => {
-          setDarcelEyelid(eyelids[Math.floor(Math.random() * 4)]);
-        }, 250);
-      }
-    }, 3000); // Changes every 3 secs
+          setTimeout(() => {
+            setDarcelEyelid(eyelids[Math.floor(Math.random() * 4)]);
+          }, 250);
+        }
+      }, 3000); // Changes every 3 secs
 
-    return () => clearInterval(interval);
-  }, []);
+      return () => clearInterval(interval);
+    }
+  }, [props.isShaking]);
 
   return (
     <View style={styles.container}>
