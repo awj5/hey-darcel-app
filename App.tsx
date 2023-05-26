@@ -1,14 +1,13 @@
 import { useState, useEffect } from "react";
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, SafeAreaView } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useFonts } from "expo-font";
 import Home from "./components/Home";
-import InfoIcon from "./components/InfoIcon";
-import { styleVars } from "./utils/styles";
 import { shake } from "./utils/shake";
 
 export default function App() {
   const shaking = shake();
+  const Stack = createNativeStackNavigator();
   const [isShaking, setIsShaking] = useState(false);
 
   const [fontsLoaded] = useFonts({
@@ -31,18 +30,12 @@ export default function App() {
   }
 
   return (
-    <SafeAreaView style={styles.container}>
-      <Home isShaking={isShaking} />
-      <InfoIcon />
-      <StatusBar style="auto" />
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Home">
+          {(props) => <Home {...props} isShaking={isShaking} />}
+        </Stack.Screen>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: styleVars.colorYellow,
-    justifyContent: "center",
-  },
-});
