@@ -10,10 +10,7 @@ export default function InfoIcon() {
 
   return (
     <View style={styles.container}>
-      <Pressable
-        onPress={infoPressed}
-        style={({ pressed }) => [pressedDefault(pressed), styles.info]}
-      >
+      <Pressable onPress={infoPressed} style={({ pressed }) => [pressedDefault(pressed), styles.info]}>
         <FontAwesomeIcon icon={faCircleInfo} size={28} />
       </Pressable>
     </View>

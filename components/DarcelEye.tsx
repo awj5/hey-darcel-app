@@ -48,18 +48,10 @@ export default function DarcelEye(props: { isShaking: boolean }) {
       }
     }
 
-    const direction =
-      speed === 250
-        ? "C"
-        : directions[Math.floor(Math.random() * directions.length)]; // Center if last move in shake
+    const direction = speed === 250 ? "C" : directions[Math.floor(Math.random() * directions.length)]; // Center if last move in shake
     const offset =
       darcelHeight /
-      ((direction === "SE" ||
-        direction === "SW" ||
-        direction === "NE" ||
-        direction === "NW"
-        ? 10.6
-        : 7.5) +
+      ((direction === "SE" || direction === "SW" || direction === "NE" || direction === "NW" ? 10.6 : 7.5) +
         (!props.isShaking ? 6 : 0)); // More offset for diagonal and if shaking
     var x: number;
     var y: number;
@@ -150,10 +142,7 @@ export default function DarcelEye(props: { isShaking: boolean }) {
     <Animated.Image
       onLayout={onLayout}
       source={require("../assets/darcel/eye.png")}
-      style={[
-        stylesDarcel.image,
-        { transform: [{ translateX: eyeX }, { translateY: eyeY }] },
-      ]}
+      style={[stylesDarcel.image, { transform: [{ translateX: eyeX }, { translateY: eyeY }] }]}
     />
   );
 }
