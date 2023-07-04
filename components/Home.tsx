@@ -3,7 +3,7 @@ import { StyleSheet, SafeAreaView } from "react-native";
 import * as Haptics from "expo-haptics";
 import Heading from "./Heading";
 import HomeDarcel from "./HomeDarcel";
-import InfoIcon from "./InfoIcon";
+import InfoIcon from "./home/InfoIcon";
 import { shake } from "../utils/shake";
 import { styleVars } from "../utils/styles";
 

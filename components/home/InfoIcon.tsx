@@ -1,7 +1,7 @@
 import { StyleSheet, View, Pressable } from "react-native";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons/faCircleInfo";
-import { pressedDefault } from "../utils/helpers";
+import { pressedDefault } from "../../utils/helpers";
 
 export default function InfoIcon() {
   const infoPressed = () => {
