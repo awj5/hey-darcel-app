@@ -1,28 +1,26 @@
 import { useState, useEffect } from "react";
 import { StyleSheet, View, Image } from "react-native";
-import DarcelEye from "./DarcelEye";
-import { stylesDarcel } from "../utils/styles";
+import Eye from "./darcel/Eye";
+import { stylesDarcel } from "utils/styles";
 
 export default function HomeDarcel(props: { isShaking: boolean }) {
   const mouths = ["frown", "smile", "flat"];
   const eyelids = ["none", "large", "small", "med"];
-
   const [darcelMouth, setDarcelMouth] = useState(mouths[Math.floor(Math.random() * 3)]);
-
   const [darcelEyelid, setDarcelEyelid] = useState(eyelids[Math.floor(Math.random() * 3)]);
 
   const images = {
     mouth: {
-      frown: require(`../assets/darcel/mouth-frown.png`),
-      smile: require(`../assets/darcel/mouth-smile.png`),
-      flat: require(`../assets/darcel/mouth-flat.png`),
+      frown: require(`../../assets/darcel/mouth-frown.png`),
+      smile: require(`../../assets/darcel/mouth-smile.png`),
+      flat: require(`../../assets/darcel/mouth-flat.png`),
     },
     eyelid: {
-      none: require(`../assets/darcel/eyelid-none.png`),
-      closed: require(`../assets/darcel/eyelid-closed.png`),
-      large: require(`../assets/darcel/eyelid-large.png`),
-      small: require(`../assets/darcel/eyelid-small.png`),
-      med: require(`../assets/darcel/eyelid-med.png`),
+      none: require(`../../assets/darcel/eyelid-none.png`),
+      closed: require(`../../assets/darcel/eyelid-closed.png`),
+      large: require(`../../assets/darcel/eyelid-large.png`),
+      small: require(`../../assets/darcel/eyelid-small.png`),
+      med: require(`../../assets/darcel/eyelid-med.png`),
     },
   };
 
@@ -65,11 +63,11 @@ export default function HomeDarcel(props: { isShaking: boolean }) {
   return (
     <View style={styles.container}>
       <View style={styles.wrapper}>
-        <Image source={require("../assets/darcel/eye-bg.png")} style={stylesDarcel.image} />
-        <DarcelEye isShaking={props.isShaking} />
+        <Image source={require("../../assets/darcel/eye-bg.png")} style={stylesDarcel.image} />
+        <Eye isShaking={props.isShaking} />
         <Image source={images.eyelid[darcelEyelid as keyof typeof images.eyelid]} style={stylesDarcel.image} />
-        <Image source={require("../assets/darcel/head.png")} style={stylesDarcel.image} />
-        <Image source={require("../assets/darcel/glasses.png")} style={stylesDarcel.image} />
+        <Image source={require("../../assets/darcel/head.png")} style={stylesDarcel.image} />
+        <Image source={require("../../assets/darcel/glasses.png")} style={stylesDarcel.image} />
         <Image source={images.mouth[darcelMouth as keyof typeof images.mouth]} style={stylesDarcel.image} />
       </View>
     </View>

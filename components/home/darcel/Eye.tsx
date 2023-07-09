@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import { Animated, LayoutChangeEvent, Easing } from "react-native";
-import { stylesDarcel } from "../utils/styles";
+import { stylesDarcel } from "utils/styles";
 
 export default function DarcelEye(props: { isShaking: boolean }) {
   const [darcelHeight, setDarcelHeight] = useState(0);
@@ -141,7 +141,7 @@ export default function DarcelEye(props: { isShaking: boolean }) {
   return (
     <Animated.Image
       onLayout={onLayout}
-      source={require("../assets/darcel/eye.png")}
+      source={require("../../../assets/darcel/eye.png")}
       style={[stylesDarcel.image, { transform: [{ translateX: eyeX }, { translateY: eyeY }] }]}
     />
   );

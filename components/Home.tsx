@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import { StyleSheet, SafeAreaView } from "react-native";
 import * as Haptics from "expo-haptics";
 import Heading from "./Heading";
-import HomeDarcel from "./HomeDarcel";
+import Darcel from "./home/Darcel";
 import InfoIcon from "./home/InfoIcon";
-import { shake } from "../utils/shake";
-import { styleVars } from "../utils/styles";
+import { shake } from "utils/shake";
+import { styleVars } from "utils/styles";
 
 export default function Home(props: { navigation: any }) {
   const shaking = shake();
@@ -26,7 +26,7 @@ export default function Home(props: { navigation: any }) {
   return (
     <SafeAreaView style={styles.container}>
       <Heading text={["Ask me a", "question", "then shake!"]} />
-      <HomeDarcel isShaking={isShaking} />
+      <Darcel isShaking={isShaking} />
       <InfoIcon />
     </SafeAreaView>
   );
