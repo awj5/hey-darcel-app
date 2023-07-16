@@ -8,7 +8,6 @@ module.exports = function (api) {
         {
           root: ["./src"],
           alias: {
-            test: "./test",
             utils: "./utils",
             underscore: "lodash",
           },

@@ -5,9 +5,9 @@ import { stylesDarcel } from "utils/styles";
 
 export default function HomeDarcel(props: { isShaking: boolean }) {
   const mouths = ["frown", "smile", "flat"];
-  const eyelids = ["none", "large", "small", "med"];
+  const eyelids = ["none", "small", "med", "large"];
   const [darcelMouth, setDarcelMouth] = useState(mouths[Math.floor(Math.random() * 3)]);
-  const [darcelEyelid, setDarcelEyelid] = useState(eyelids[Math.floor(Math.random() * 3)]);
+  const [darcelEyelid, setDarcelEyelid] = useState(eyelids[Math.floor(Math.random() * 4)]);
 
   const images = {
     mouth: {
@@ -18,9 +18,9 @@ export default function HomeDarcel(props: { isShaking: boolean }) {
     eyelid: {
       none: require(`../../assets/darcel/eyelid-none.png`),
       closed: require(`../../assets/darcel/eyelid-closed.png`),
-      large: require(`../../assets/darcel/eyelid-large.png`),
       small: require(`../../assets/darcel/eyelid-small.png`),
       med: require(`../../assets/darcel/eyelid-med.png`),
+      large: require(`../../assets/darcel/eyelid-large.png`),
     },
   };
 

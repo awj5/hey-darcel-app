@@ -1,13 +1,17 @@
 import { useState, useEffect } from "react";
 import { StyleSheet, SafeAreaView } from "react-native";
 import * as Haptics from "expo-haptics";
+import type { NativeStackScreenProps } from "@react-navigation/native-stack";
+import type { RootStackParamList } from "../App";
 import Heading from "./Heading";
 import Darcel from "./home/Darcel";
 import InfoIcon from "./home/InfoIcon";
 import { shake } from "utils/shake";
 import { styleVars } from "utils/styles";
 
-export default function Home(props: { navigation: any }) {
+type HomeProps = NativeStackScreenProps<RootStackParamList, "Home">;
+
+export default function Home({ navigation }: HomeProps) {
   const shaking = shake();
   const [isShaking, setIsShaking] = useState(false);
 
@@ -15,9 +19,10 @@ export default function Home(props: { navigation: any }) {
     if (shaking && !isShaking) {
       setIsShaking(true);
 
+      // WIP
       setTimeout(() => {
         Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
-        props.navigation.navigate("Result");
+        //navigation.navigate("Result");
         setIsShaking(false); // Will remove
       }, 5000);
     }
