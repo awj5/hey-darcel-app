@@ -1,7 +1,16 @@
 import { StyleSheet, SafeAreaView } from "react-native";
+import type { NativeStackScreenProps } from "@react-navigation/native-stack";
+import type { RootStackParamList } from "../App";
+import Back from "./result/Back";
 
-export default function Result() {
-  return <SafeAreaView style={styles.container}></SafeAreaView>;
+type ResultProps = NativeStackScreenProps<RootStackParamList, "Result">;
+
+export default function Result({ navigation }: ResultProps) {
+  return (
+    <SafeAreaView style={styles.container}>
+      <Back />
+    </SafeAreaView>
+  );
 }
 
 const styles = StyleSheet.create({

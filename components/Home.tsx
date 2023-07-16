@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { StyleSheet, SafeAreaView } from "react-native";
 import * as Haptics from "expo-haptics";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { useFocusEffect } from "@react-navigation/native";
 import type { RootStackParamList } from "../App";
 import Heading from "./Heading";
 import Darcel from "./home/Darcel";
@@ -15,15 +16,19 @@ export default function Home({ navigation }: HomeProps) {
   const shaking = shake();
   const [isShaking, setIsShaking] = useState(false);
 
+  useFocusEffect(
+    useCallback(() => {
+      setIsShaking(false);
+    }, [])
+  );
+
   useEffect(() => {
     if (shaking && !isShaking) {
       setIsShaking(true);
 
-      // WIP
       setTimeout(() => {
         Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
-        //navigation.navigate("Result");
-        setIsShaking(false); // Will remove
+        navigation.navigate("Result");
       }, 5000);
     }
   }, [shaking]);

@@ -2,7 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import { Animated, LayoutChangeEvent, Easing } from "react-native";
 import { stylesDarcel } from "utils/styles";
 
-export default function DarcelEye(props: { isShaking: boolean }) {
+export default function Eye(props: { isShaking: boolean }) {
   const [darcelHeight, setDarcelHeight] = useState(0);
   const eyeX = useRef(new Animated.Value(0)).current;
   const eyeY = useRef(new Animated.Value(0)).current;

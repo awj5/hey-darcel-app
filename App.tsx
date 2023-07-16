@@ -10,6 +10,8 @@ export type RootStackParamList = {
 };
 
 export default function App() {
+  const Stack = createNativeStackNavigator<RootStackParamList>();
+
   const [fontsLoaded] = useFonts({
     "Avant-Garde": require("./assets/fonts/itc-avant-garde-gothic-lt-bold.ttf"),
   });
@@ -18,8 +20,6 @@ export default function App() {
   if (!fontsLoaded) {
     return null;
   }
-
-  const Stack = createNativeStackNavigator<RootStackParamList>();
 
   return (
     <NavigationContainer>

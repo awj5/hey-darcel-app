@@ -3,7 +3,7 @@ import { StyleSheet, View, Image } from "react-native";
 import Eye from "./darcel/Eye";
 import { stylesDarcel } from "utils/styles";
 
-export default function HomeDarcel(props: { isShaking: boolean }) {
+export default function Darcel(props: { isShaking: boolean }) {
   const mouths = ["frown", "smile", "flat"];
   const eyelids = ["none", "small", "med", "large"];
   const [darcelMouth, setDarcelMouth] = useState(mouths[Math.floor(Math.random() * 3)]);
@@ -31,7 +31,7 @@ export default function HomeDarcel(props: { isShaking: boolean }) {
     } else {
       const interval = setInterval(() => {
         // 1/3 change of changing
-        if (!Math.floor(Math.random() * 3)) {
+        if (!props.isShaking && !Math.floor(Math.random() * 3)) {
           setDarcelMouth(mouths[Math.floor(Math.random() * 3)]);
         }
       }, 2000); // Changes every 2 secs
@@ -47,11 +47,11 @@ export default function HomeDarcel(props: { isShaking: boolean }) {
     } else {
       const interval = setInterval(() => {
         // 1/3 change of closing
-        if (!Math.floor(Math.random() * 3)) {
+        if (!props.isShaking && !Math.floor(Math.random() * 3)) {
           setDarcelEyelid("closed"); // Blink
 
           setTimeout(() => {
-            setDarcelEyelid(eyelids[Math.floor(Math.random() * 4)]);
+            setDarcelEyelid(!props.isShaking ? eyelids[Math.floor(Math.random() * 4)] : "none");
           }, 250);
         }
       }, 3000); // Changes every 3 secs

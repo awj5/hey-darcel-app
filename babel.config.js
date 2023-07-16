@@ -9,6 +9,7 @@ module.exports = function (api) {
           root: ["./src"],
           alias: {
             utils: "./utils",
+            context: "./context",
             underscore: "lodash",
           },
         },
