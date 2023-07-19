@@ -7,6 +7,7 @@
       "*": ["src/*"],
       "utils/*": ["utils/*"],
       "context/*": ["context/*"],
+      "app": ["App.tsx"],
       "underscore": ["lodash"]
     }
   }

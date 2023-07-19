@@ -8,7 +8,7 @@ type ResultProps = NativeStackScreenProps<RootStackParamList, "Result">;
 export default function Result({ navigation }: ResultProps) {
   return (
     <SafeAreaView style={styles.container}>
-      <Back />
+      <Back navigation={navigation} />
     </SafeAreaView>
   );
 }

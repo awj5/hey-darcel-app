@@ -31,7 +31,7 @@ export default function Darcel(props: { isShaking: boolean }) {
     } else {
       const interval = setInterval(() => {
         // 1/3 change of changing
-        if (!props.isShaking && !Math.floor(Math.random() * 3)) {
+        if (!Math.floor(Math.random() * 3)) {
           setDarcelMouth(mouths[Math.floor(Math.random() * 3)]);
         }
       }, 2000); // Changes every 2 secs
@@ -45,18 +45,23 @@ export default function Darcel(props: { isShaking: boolean }) {
     if (props.isShaking) {
       setDarcelEyelid("none");
     } else {
+      var timeout: ReturnType<typeof setTimeout>;
+
       const interval = setInterval(() => {
         // 1/3 change of closing
-        if (!props.isShaking && !Math.floor(Math.random() * 3)) {
+        if (!Math.floor(Math.random() * 3)) {
           setDarcelEyelid("closed"); // Blink
 
-          setTimeout(() => {
-            setDarcelEyelid(!props.isShaking ? eyelids[Math.floor(Math.random() * 4)] : "none");
+          timeout = setTimeout(() => {
+            setDarcelEyelid(eyelids[Math.floor(Math.random() * 4)]);
           }, 250);
         }
       }, 3000); // Changes every 3 secs
 
-      return () => clearInterval(interval);
+      return () => {
+        clearTimeout(timeout);
+        clearInterval(interval);
+      };
     }
   }, [props.isShaking]);
 

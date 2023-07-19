@@ -10,6 +10,7 @@ module.exports = function (api) {
           alias: {
             utils: "./utils",
             context: "./context",
+            app: "./App.tsx",
             underscore: "lodash",
           },
         },
