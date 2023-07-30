@@ -14,7 +14,7 @@ export default function Back(props: { navigation: NativeStackNavigationProp<Root
     <View style={styles.container}>
       <Pressable onPress={backPressed} style={({ pressed }) => [pressedDefault(pressed), styles.back]}>
         <FontAwesomeIcon icon={faChevronLeft} size={28} />
-        <Text style={styles.text}>Back</Text>
+        <Text style={styles.text}>Try again</Text>
       </Pressable>
     </View>
   );

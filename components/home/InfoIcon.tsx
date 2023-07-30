@@ -1,11 +1,13 @@
 import { StyleSheet, View, Pressable } from "react-native";
+import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons/faCircleInfo";
 import { pressedDefault } from "utils/helpers";
+import type { RootStackParamList } from "app";
 
-export default function InfoIcon() {
+export default function InfoIcon(props: { navigation: NativeStackNavigationProp<RootStackParamList, "Home"> }) {
   const infoPressed = () => {
-    console.log(1);
+    props.navigation.navigate("Result");
   };
 
   return (
