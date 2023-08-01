@@ -13,7 +13,9 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.awj5.heydarcel",
+      "buildNumber": "2"
     },
     "android": {
       "adaptiveIcon": {
@@ -23,6 +25,11 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "585d9672-cf3f-4296-9e21-c3174887ecee"
+      }
     }
   }
 }
