@@ -7,7 +7,7 @@ import type { RootStackParamList } from "app";
 
 export default function InfoIcon(props: { navigation: NativeStackNavigationProp<RootStackParamList, "Home"> }) {
   const infoPressed = () => {
-    props.navigation.navigate("Result");
+    //props.navigation.navigate("Result");
   };
 
   return (

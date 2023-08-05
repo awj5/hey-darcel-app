@@ -24,15 +24,16 @@ const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
     justifyContent: "center",
-    margin: 8,
+    marginLeft: 8,
+    marginRight: 8,
   },
   text: {
     fontFamily: "Avant-Garde",
     fontSize: 48,
-    lineHeight: 40,
+    lineHeight: 48,
     textAlign: "center",
     letterSpacing: -2,
     color: "white",
-    paddingTop: 22, // Hack to stop font cropping and vertically align
+    paddingTop: 14, // Hack to stop font cropping and vertically align
   },
 });

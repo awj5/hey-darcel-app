@@ -9,18 +9,18 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#000000"
+      "backgroundColor": "#cd0000"
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.awj5.heydarcel",
-      "buildNumber": "2"
+      "buildNumber": "3"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#000000"
+        "backgroundColor": "#cd0000"
       }
     },
     "web": {

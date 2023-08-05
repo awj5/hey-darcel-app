@@ -20,7 +20,6 @@ const images = {
   15: require("../../assets/answers/answer-15.gif"),
   16: require("../../assets/answers/answer-16.gif"),
   17: require("../../assets/answers/answer-17.gif"),
-  18: require("../../assets/answers/answer-18.gif"),
 };
 
 export default function AnswerImage(props: { id: number }) {
@@ -32,9 +31,7 @@ export default function AnswerImage(props: { id: number }) {
 
   return (
     <View style={styles.container}>
-      <View style={styles.wrapper}>
-        <Image style={styles.image} source={image} />
-      </View>
+      <Image style={styles.image} source={image} />
     </View>
   );
 }
@@ -42,11 +39,6 @@ export default function AnswerImage(props: { id: number }) {
 const styles = StyleSheet.create({
   container: {
     height: "50%",
-  },
-  wrapper: {
-    flex: 1,
-    marginTop: 8,
-    marginBottom: 8,
   },
   image: { width: "100%", height: "100%", resizeMode: "contain" },
 });
