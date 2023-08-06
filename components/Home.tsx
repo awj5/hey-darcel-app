@@ -35,9 +35,9 @@ export default function Home({ navigation }: HomeProps) {
 
   return (
     <SafeAreaView style={styles.container}>
+      <InfoIcon navigation={navigation} />
       <Heading text={["Ask me a", "question", "then shake!"]} />
       <Darcel isShaking={isShaking} />
-      <InfoIcon navigation={navigation} />
     </SafeAreaView>
   );
 }

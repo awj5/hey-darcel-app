@@ -27,7 +27,8 @@ const styles = StyleSheet.create({
     height: "100%",
   },
   back: {
-    padding: 16,
+    padding: 8,
+    paddingTop: 18,
     flexDirection: "row",
     alignSelf: "flex-start",
     alignItems: "center",
