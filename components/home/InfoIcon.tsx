@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
   },
   info: {
-    padding: 8,
+    padding: 12,
     paddingTop: 18,
   },
 });
