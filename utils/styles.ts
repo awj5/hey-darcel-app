@@ -2,6 +2,7 @@ import { StyleSheet } from "react-native";
 
 export const styleVars = {
   colorYellow: "#FC0",
+  colorRed: "#CD0000",
 };
 
 export const stylesDarcel = StyleSheet.create({

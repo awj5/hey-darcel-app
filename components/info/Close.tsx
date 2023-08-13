@@ -1,19 +1,19 @@
 import { StyleSheet, View, Pressable } from "react-native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faCircleInfo } from "@fortawesome/free-solid-svg-icons/faCircleInfo";
+import { faCircleXmark } from "@fortawesome/free-solid-svg-icons/faCircleXmark";
 import { pressedDefault } from "utils/helpers";
 import type { RootStackParamList } from "app";
 
-export default function InfoIcon(props: { navigation: NativeStackNavigationProp<RootStackParamList, "Home"> }) {
-  const infoPressed = () => {
-    props.navigation.navigate("Info");
+export default function Close(props: { navigation: NativeStackNavigationProp<RootStackParamList, "Info"> }) {
+  const closePressed = () => {
+    props.navigation.navigate("Home");
   };
 
   return (
     <View style={styles.container}>
-      <Pressable onPress={infoPressed} style={({ pressed }) => [pressedDefault(pressed), styles.info]}>
-        <FontAwesomeIcon icon={faCircleInfo} size={28} />
+      <Pressable onPress={closePressed} style={({ pressed }) => [pressedDefault(pressed), styles.close]}>
+        <FontAwesomeIcon icon={faCircleXmark} size={28} />
       </Pressable>
     </View>
   );
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     height: "100%",
     alignItems: "flex-end",
   },
-  info: {
+  close: {
     padding: 12,
     paddingTop: 18,
   },
