@@ -1,4 +1,5 @@
 import { useFonts } from "expo-font";
+import { StatusBar } from "expo-status-bar";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "./components/Home";
@@ -35,6 +36,7 @@ export default function App() {
           <Stack.Screen name="Info" component={Info} />
         </Stack.Group>
       </Stack.Navigator>
+      <StatusBar style="dark" />
     </NavigationContainer>
   );
 }

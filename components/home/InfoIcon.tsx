@@ -1,21 +1,27 @@
-import { StyleSheet, View, Pressable } from "react-native";
+import { StyleSheet, SafeAreaView, Pressable } from "react-native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons/faCircleInfo";
-import { pressedDefault } from "utils/helpers";
 import type { RootStackParamList } from "app";
+import { pressedDefault } from "utils/helpers";
+import device from "utils/device";
 
 export default function InfoIcon(props: { navigation: NativeStackNavigationProp<RootStackParamList, "Home"> }) {
+  const { size } = device();
+
   const infoPressed = () => {
     props.navigation.navigate("Info");
   };
 
   return (
-    <View style={styles.container}>
-      <Pressable onPress={infoPressed} style={({ pressed }) => [pressedDefault(pressed), styles.info]}>
-        <FontAwesomeIcon icon={faCircleInfo} size={28} />
+    <SafeAreaView style={styles.container}>
+      <Pressable
+        onPress={infoPressed}
+        style={({ pressed }) => [pressedDefault(pressed), size === "large" ? styles.infoLarge : styles.info]}
+      >
+        <FontAwesomeIcon icon={faCircleInfo} size={size === "large" ? 32 : 28} />
       </Pressable>
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -28,6 +34,8 @@ const styles = StyleSheet.create({
   },
   info: {
     padding: 12,
-    paddingTop: 18,
+  },
+  infoLarge: {
+    padding: 16,
   },
 });

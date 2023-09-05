@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Accelerometer } from "expo-sensors";
 
-export const shake = () => {
+const shake = () => {
   const [shaking, setShaking] = useState(false);
 
   useEffect(() => {
@@ -29,3 +29,5 @@ export const shake = () => {
 
   return shaking;
 };
+
+export default shake;

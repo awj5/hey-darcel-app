@@ -1,13 +1,18 @@
-import { StyleSheet, View, Text, useWindowDimensions } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
+import device from "../utils/device";
 
 export default function Heading(props: { text: string[] }) {
-  const { width, height } = useWindowDimensions();
+  const { size, orientation } = device();
 
   return (
     <View style={styles.container}>
       <View style={styles.wrapper}>
         <Text
-          style={[styles.text, width >= 744 && width < height && styles.largeText, width <= 320 && styles.smallText]}
+          style={[
+            styles.text,
+            size === "large" && orientation === "portrait" && styles.largeText,
+            size === "small" && styles.smallText,
+          ]}
           allowFontScaling={false}
         >
           {props.text.map((line, i) => (

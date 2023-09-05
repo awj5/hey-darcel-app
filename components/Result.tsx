@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { StyleSheet, SafeAreaView, Image } from "react-native";
+import { StyleSheet, View } from "react-native";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import type { RootStackParamList } from "../App";
 import Back from "./result/Back";
@@ -27,11 +27,11 @@ export default function Result({ navigation }: ResultProps) {
   }, []);
 
   return (
-    <SafeAreaView style={[styles.container, { backgroundColor: answer.color }]}>
+    <View style={[styles.container, { backgroundColor: answer.color }]}>
       <Heading text={answer.text} />
       <AnswerImage id={answer.id} />
       <Back navigation={navigation} />
-    </SafeAreaView>
+    </View>
   );
 }
 
