@@ -7,6 +7,7 @@ import type { RootStackParamList } from "../App";
 import Heading from "./Heading";
 import Darcel from "./home/Darcel";
 import InfoIcon from "./home/InfoIcon";
+import Header from "./home/Header";
 import shake from "utils/shake";
 import { styleVars } from "utils/styles";
 
@@ -35,6 +36,7 @@ export default function Home({ navigation }: HomeProps) {
 
   return (
     <View style={styles.container}>
+      <Header />
       <InfoIcon navigation={navigation} />
       <Heading text={["Ask me a", "question", "then shake!"]} />
       <Darcel isShaking={isShaking} />

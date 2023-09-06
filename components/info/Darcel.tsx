@@ -6,7 +6,10 @@ export default function Darcel() {
 
   return (
     <View style={[styles.container, size === "large" && styles.containerLarge]}>
-      <Image source={require("../../assets/darcel.png")} style={styles.image} />
+      <Image
+        source={require("../../assets/darcel.png")}
+        style={[styles.image, size === "large" && styles.imageLarge]}
+      />
     </View>
   );
 }
@@ -21,7 +24,10 @@ const styles = StyleSheet.create({
     paddingTop: 64,
   },
   image: {
-    height: 400,
+    height: 360,
     resizeMode: "contain",
+  },
+  imageLarge: {
+    height: 400,
   },
 });

@@ -11,12 +11,14 @@ type InfoProps = NativeStackScreenProps<RootStackParamList, "Info">;
 export default function Info({ navigation }: InfoProps) {
   return (
     <View style={styles.container}>
-      <SafeAreaView>
-        <ScrollView style={styles.scroll}>
-          <Darcel />
-          <InfoText />
-        </ScrollView>
-      </SafeAreaView>
+      <View style={styles.wrapper}>
+        <SafeAreaView>
+          <ScrollView style={styles.scroll}>
+            <Darcel />
+            <InfoText />
+          </ScrollView>
+        </SafeAreaView>
+      </View>
 
       <Close navigation={navigation} />
     </View>
@@ -27,6 +29,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: styleVars.colorRed,
+  },
+  wrapper: {
+    flex: 1,
+    justifyContent: "center",
   },
   scroll: {
     overflow: "visible",
