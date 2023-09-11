@@ -14,21 +14,27 @@ export default function Darcel(props: { isShaking: boolean }) {
       frown: require(`../../assets/darcel/mouth-frown.png`),
       smile: require(`../../assets/darcel/mouth-smile.png`),
       flat: require(`../../assets/darcel/mouth-flat.png`),
+      zigZag: require(`../../assets/darcel/mouth-zig-zag.png`),
     },
     eyelid: {
       none: require(`../../assets/darcel/eyelid-none.png`),
-      closed: require(`../../assets/darcel/eyelid-closed.png`),
       small: require(`../../assets/darcel/eyelid-small.png`),
       med: require(`../../assets/darcel/eyelid-med.png`),
       large: require(`../../assets/darcel/eyelid-large.png`),
+      closed: require(`../../assets/darcel/eyelid-closed.png`),
     },
   };
 
   // Mouth
   useEffect(() => {
     if (props.isShaking) {
-      setDarcelMouth("frown");
+      setDarcelMouth("zigZag");
     } else {
+      // Reset after shake
+      if (darcelMouth === "zigZag") {
+        setDarcelMouth(mouths[Math.floor(Math.random() * 3)]);
+      }
+
       const interval = setInterval(() => {
         // 1/3 change of changing
         if (!Math.floor(Math.random() * 3)) {
