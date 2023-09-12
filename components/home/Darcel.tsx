@@ -92,5 +92,7 @@ const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
     margin: 8,
+    marginLeft: 24,
+    marginRight: 24,
   },
 });
