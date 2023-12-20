@@ -1,4 +1,4 @@
-import { StyleSheet, SafeAreaView, Pressable, Text } from "react-native";
+import { StyleSheet, SafeAreaView, Pressable, Text, Platform, StatusBar } from "react-native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons/faChevronLeft";
@@ -14,7 +14,7 @@ export default function Back(props: { navigation: NativeStackNavigationProp<Root
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container, { paddingTop: Platform.OS == "android" ? StatusBar.currentHeight : 0 }]}>
       <Pressable
         onPress={backPressed}
         style={({ pressed }) => [pressedDefault(pressed), styles.back, size === "large" && styles.backLarge]}

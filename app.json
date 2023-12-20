@@ -11,7 +11,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#cd0000"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.awj5.heydarcel",
@@ -21,7 +23,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#cd0000"
-      }
+      },
+      "package": "com.awj5.heydarcel"
     },
     "web": {
       "favicon": "./assets/favicon.png"

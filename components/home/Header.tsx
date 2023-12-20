@@ -1,11 +1,11 @@
-import { StyleSheet, Text, SafeAreaView } from "react-native";
+import { StyleSheet, Text, SafeAreaView, Platform, StatusBar } from "react-native";
 import device from "utils/device";
 
 export default function Header() {
   const { size } = device();
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container, { paddingTop: Platform.OS == "android" ? StatusBar.currentHeight : 0 }]}>
       <Text style={[styles.text, size === "large" && styles.textLarge]}>HEY DARCEL</Text>
     </SafeAreaView>
   );

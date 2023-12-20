@@ -1,4 +1,4 @@
-import { StyleSheet, SafeAreaView, Pressable } from "react-native";
+import { StyleSheet, SafeAreaView, Pressable, Platform, StatusBar } from "react-native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons/faCircleInfo";
@@ -14,7 +14,7 @@ export default function InfoIcon(props: { navigation: NativeStackNavigationProp<
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container, { paddingTop: Platform.OS == "android" ? StatusBar.currentHeight : 0 }]}>
       <Pressable
         onPress={infoPressed}
         style={({ pressed }) => [pressedDefault(pressed), size === "large" ? styles.infoLarge : styles.info]}
