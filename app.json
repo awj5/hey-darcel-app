@@ -15,14 +15,15 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.awj5.heydarcel",
-      "buildNumber": "7"
+      "buildNumber": "8"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#cd0000"
       },
-      "package": "com.awj5.heydarcel"
+      "package": "com.awj5.heydarcel",
+      "versionCode": 2
     },
     "web": {
       "favicon": "./assets/favicon.png"
