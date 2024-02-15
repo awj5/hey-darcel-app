@@ -11,17 +11,17 @@ export default function Darcel(props: { isShaking: boolean }) {
 
   const images = {
     mouth: {
-      frown: require(`../../assets/darcel/mouth-frown.png`),
-      smile: require(`../../assets/darcel/mouth-smile.png`),
-      flat: require(`../../assets/darcel/mouth-flat.png`),
-      zigZag: require(`../../assets/darcel/mouth-zig-zag.png`),
+      frown: require("../../assets/darcel/mouth-frown.png"),
+      smile: require("../../assets/darcel/mouth-smile.png"),
+      flat: require("../../assets/darcel/mouth-flat.png"),
+      zigZag: require("../../assets/darcel/mouth-zig-zag.png"),
     },
     eyelid: {
-      none: require(`../../assets/darcel/eyelid-none.png`),
-      small: require(`../../assets/darcel/eyelid-small.png`),
-      med: require(`../../assets/darcel/eyelid-med.png`),
-      large: require(`../../assets/darcel/eyelid-large.png`),
-      closed: require(`../../assets/darcel/eyelid-closed.png`),
+      none: require("../../assets/darcel/eyelid-none.png"),
+      small: require("../../assets/darcel/eyelid-small.png"),
+      med: require("../../assets/darcel/eyelid-med.png"),
+      large: require("../../assets/darcel/eyelid-large.png"),
+      closed: require("../../assets/darcel/eyelid-closed.png"),
     },
   };
 
